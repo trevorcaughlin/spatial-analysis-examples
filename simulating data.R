@@ -25,6 +25,7 @@ rp=projectRaster(rain,crs="+proj=utm +zone=17 +datum=WGS84 +units=m +no_defs +el
 
 rpts<-rasterToPoints(rp)
 
+
 logging_rate<-runif(nrow(rpts))
 
 biomass<-rnorm(n=nrow(rpts),mean=100+rpts[,3]*2.5+logging_rate*-1000,sd=5)
