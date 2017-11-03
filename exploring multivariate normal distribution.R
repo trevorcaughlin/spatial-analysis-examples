@@ -28,23 +28,21 @@ mvrnorm(2,mu=c(9,9),Sigma=Sigma)
 
 
 ####TASK 2: explore by randomly drawing a bunch of data
+#how many sample sizes are here?
 bivn <- mvrnorm(5000, mu = mu, Sigma = Sigma )  # from Mass package
 head(bivn)                                      
 
-
-
-
-# Generate sample from N(mu, Sigma)
-bivn <- mvrnorm(5000, mu = mu, Sigma = Sigma )  # from Mass package
-head(bivn)                                      
 # Calculate kernel density estimate
+#this just gives an estimate of density
 bivn.kde <- kde2d(bivn[,1], bivn[,2], n = 50)   # from MASS package
+
+#what is in the center here, why?
 
 # Contour plot overlayed on heat map image of results
 image(bivn.kde)       # from base graphics package
 contour(bivn.kde, add = TRUE)     # from base graphics package
 
-
+#3d plot1
 persp(bivn.kde, phi = 45, theta = 30, shade = .1, border = NA) # from base graphics package
 
 library(rgl)
