@@ -6,7 +6,7 @@ library("rgdal")
 
 #make polygon
 
-#Sudden Infant Death Syndrome in South Carolina, aggregated from 1979 to 1983
+#Sudden Infant Death Syndrome in North Carolina, aggregated from 1979 to 1983
 
 nc.sid <- readShapePoly(
   system.file("etc/shapes/sids.shp",
